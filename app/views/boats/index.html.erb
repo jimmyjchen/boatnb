@@ -1,0 +1,9 @@
+<h1>Boats#index</h1>
+
+<% @boats.each do |b| %>
+<%= b.title %> <br />
+<%= b.description %> <br />
+<p>User ID: <%= b.user_id %></p> <br />
+<p>Price: $<%= b.price %></p> <br />
+<%= b.available %> <br />
+<% end %>
