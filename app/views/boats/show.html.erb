@@ -6,14 +6,9 @@
       <h2>Boat title: <%= @boat.title %></h2>
       <p>Description: <%= @boat.description %></p>
     </div>
-    <h2 class="card-trip-pricing">Price: <%= @boat.price %> </h2>
-  <%= link_to 'book', new_boat_booking_path(@boat), class: "btn btn-gradient"%>
-  </div>
+    <div>
+    <h2 class="card-trip-pricing"><%= number_to_currency(@boat.price, :unit => "$")%></h2>
+    <%= link_to 'Book Now', new_boat_booking_path(@boat), class:"btn btn-gradient"%>
+    </div>
 </div>
 
-
-
-
-
-  <%= link_to 'edit', edit_boat_path(@boat) %> <br />
-  <%= link_to 'destroy', boat_path(@boat), method: 'delete', data: { confirm: 'Are you sure?' } %> <br />
