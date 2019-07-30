@@ -31,9 +31,9 @@
 }
 
 .card-trip > img {
-  height: 200px;
+  height: 500px;
   width: 100%;
-  object-fit: cover;
+  object-fit: cover
 }
 
 .card-trip h2 {
@@ -63,4 +63,9 @@
   top: -20px;
   width: 40px;
 }
+
+.notice {
+  margin: 0;
+}
+
 
