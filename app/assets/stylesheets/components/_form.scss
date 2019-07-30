@@ -1,5 +1,6 @@
 
-// form background picture
+// ------- form background picture ---------------------------------------------
+
 .layout-form-page {
   overflow: hidden;
   background: white;
@@ -21,12 +22,11 @@
     position: absolute;
     left: 0;
     top: 0;
-
-
   }
 }
 
-// Boat new form
+// ---- Boat new form ----------------------------------------------------------
+
 .boat-form {
   position: relative;
   // margin-top: 40%;
@@ -41,3 +41,4 @@
   z-index: 1;
   color: white;
 }
+// -----------------------------------------------------------------------------
