@@ -1,9 +1,13 @@
 <%= @boat.title %> <br />
 <%= @boat.description %> <br />
-<%= @boat.price %> <br />
-<%= @boat.user_id %> <br />
+<p>$ <%= @boat.price %></p> <br />
+<%= @boat.user.email %><br />
 
+<% if policy(@boat).edit? %>
 <%= link_to 'edit', edit_boat_path(@boat) %> <br />
+<% end %>
+<% if policy(@boat).destroy? %>
 <%= link_to 'destroy', boat_path(@boat), method: 'delete', data: { confirm: 'Are you sure?' } %> <br />
-
+<% end %>
 <%= link_to 'book', new_boat_booking_path(@boat) %> <br />
+
