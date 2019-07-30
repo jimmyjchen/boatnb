@@ -4,10 +4,10 @@
 <% @boats.each do |b| %>
 <%= b.title %> <br />
 <%= b.description %> <br />
-<p>User ID: <%= b.user_id %></p> <br />
+<p>User: <%= b.user_id%></p> <br />
 <p>Price: $<%= b.price %></p> <br />
 <%= b.available %>
-<%= link_to 'show', boat_path(b) %> <br />
 
-<hr>
+<%= link_to 'show', boat_path(b) %> <br />
 <% end %>
+<hr>
