@@ -5,3 +5,5 @@
 
 <%= link_to 'edit', edit_boat_path(@boat) %> <br />
 <%= link_to 'destroy', boat_path(@boat), method: 'delete', data: { confirm: 'Are you sure?' } %> <br />
+
+<%= link_to 'book', new_boat_booking_path(@boat) %> <br />
