@@ -1,2 +1,7 @@
-<h1>Boats#show</h1>
-<p>Find me in app/views/boats/show.html.erb</p>
+<%= @boat.title %> <br />
+<%= @boat.description %> <br />
+<%= @boat.price %> <br />
+<%= @boat.user_id %> <br />
+
+<%= link_to 'edit', edit_boat_path(@boat) %> <br />
+<%= link_to 'destroy', boat_path(@boat), method: 'delete', data: { confirm: 'Are you sure?' } %> <br />
