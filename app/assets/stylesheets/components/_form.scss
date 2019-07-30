@@ -1,6 +1,9 @@
 
 // ------- form background picture ---------------------------------------------
 
+
+// form background picture
+
 .layout-form-page {
   overflow: hidden;
   background: white;
@@ -13,6 +16,8 @@
   padding: 40px 0;
   text-align: center;
 
+
+
   &:before {
     content: '';
     display: block;
@@ -23,10 +28,19 @@
     position: absolute;
     left: 0;
     top: 0;
+
   }
 }
 
 // ---- Boat new form ----------------------------------------------------------
+
+=======
+
+
+  }
+}
+
+// Boat new form
 
 .boat-form {
   position: relative;
@@ -34,7 +48,6 @@
   background: white;
   padding: 16px 16px;
   z-index: 1;
-  text-align: center;
 }
 
 .intro {
@@ -43,6 +56,7 @@
   z-index: 1;
   color: white;
 }
+
 // -----------------------------------------------------------------------------
 
 .layout-new-boat {
