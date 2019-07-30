@@ -8,11 +8,12 @@
     </div>
   </div>
 </section>
-
-<%= simple_form_for @boat do |f| -%>
-<%= f.input :title %>
-<%= f.input :description %>
-<%= f.input :price %>
-<%= f.submit %>
-<% end -%>
+<div class="card" style="width: 30rem;">
+  <%= simple_form_for @boat do |f| -%>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.submit %>
+  <% end -%>
+</div>
 
