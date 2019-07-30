@@ -31,7 +31,7 @@
 }
 
 .card-trip > img {
-  height: 500px;
+  height: 540px;
   width: 100%;
   object-fit: cover
 }
@@ -53,8 +53,6 @@
   padding: 16px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
 }
 
 .card-trip-infos .card-trip-user {
@@ -68,4 +66,15 @@
   margin: 0;
 }
 
+.title-boat {
+  flex-grow: 1;
+}
 
+.book-boat {
+  display: flex;
+  align-items: center;
+}
+
+.card-trip-pricing {
+  padding-right: 8px;
+}
