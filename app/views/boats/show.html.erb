@@ -1,13 +1,13 @@
-<%= @boat.title %> <br />
-<%= @boat.description %> <br />
-<p>$ <%= @boat.price %></p> <br />
-<%= @boat.user.email %><br />
-
-<% if policy(@boat).edit? %>
-<%= link_to 'edit', edit_boat_path(@boat) %> <br />
-<% end %>
-<% if policy(@boat).destroy? %>
-<%= link_to 'destroy', boat_path(@boat), method: 'delete', data: { confirm: 'Are you sure?' } %> <br />
-<% end %>
-<%= link_to 'book', new_boat_booking_path(@boat) %> <br />
-
+<!-- Boat main picture with -->
+<div class="card-trip">
+  <img src="https://images.unsplash.com/photo-1414437384035-787b9df782d7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1108&q=80" />
+  <div class="card-trip-infos">
+    <div class="title-boat">
+      <h2>Boat title: <%= @boat.title %></h2>
+      <p>Description: <%= @boat.description %></p>
+    </div>
+    <div class="book-boat">
+      <h2 class="card-trip-pricing"><%= number_to_currency(@boat.price, :unit => "$")%></h2>
+      <span> <%= link_to 'Book Now', new_boat_booking_path(@boat), class:"btn btn-gradient"%> </span>
+    </div>
+</div>
