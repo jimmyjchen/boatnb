@@ -1,0 +1,21 @@
+
+// form background picture
+.layout-form-page {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.layout-form-page > img {
+  height: 500px;
+  width: 100%;
+  object-fit: cover
+}
+
+// Boat new form
+.boat-form {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
