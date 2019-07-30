@@ -13,4 +13,8 @@
 <%= link_to 'edit', edit_boat_path(@boat) %> <br />
 <%= link_to 'destroy', boat_path(@boat), method: 'delete', data: { confirm: 'Are you sure?' } %> <br />
 
+
 <p> User id:<%= @boat.user_id %> </p>
+
+<%= link_to 'book', new_boat_booking_path(@boat) %> <br />
+
