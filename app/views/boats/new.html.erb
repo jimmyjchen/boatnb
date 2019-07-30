@@ -1,19 +1,5 @@
-<div class="layout-form-page">
-  <div class="intro">
-    <h1>LIST YOUR BOAT</h1>
-    <h2>Boatnb lets you make money renting out your boat</h2>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 offset-sm-3">
-      <div class="boat-form">
-        <%= simple_form_for @boat do |f| -%>
-        <%= f.input :title %>
-        <%= f.input :description %>
-        <%= f.input :price %>
-        <%= f.submit %>
-        <% end -%>
-      </div>
-    </div>
-  </div>
-</div>
-
+<%= simple_form_for @boat do |f| -%>
+<%= f.input :title %>
+<%= f.input :description %>
+<%= f.input :price %>
+<%= f.submit %>
