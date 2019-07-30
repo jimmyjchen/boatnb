@@ -1,9 +1,20 @@
-<%= @boat.title %> <br />
-<%= @boat.description %> <br />
-<%= @boat.price %> <br />
-<%= @boat.user_id %> <br />
+<!-- Boat main picture with -->
+<div class="card-trip">
+  <img src="https://images.unsplash.com/photo-1562281302-809108fd533c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" />
+  <div class="card-trip-infos">
+    <div>
+      <h2>Boat title: <%= @boat.title %></h2>
+      <p>Description: <%= @boat.description %></p>
+    </div>
+    <h2 class="card-trip-pricing">Price: <%= @boat.price %> </h2>
+  </div>
+</div>
 
 <%= link_to 'edit', edit_boat_path(@boat) %> <br />
 <%= link_to 'destroy', boat_path(@boat), method: 'delete', data: { confirm: 'Are you sure?' } %> <br />
 
+
+<p> User id:<%= @boat.user_id %> </p>
+
 <%= link_to 'book', new_boat_booking_path(@boat) %> <br />
+
