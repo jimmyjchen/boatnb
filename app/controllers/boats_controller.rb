@@ -1,16 +1,20 @@
 class BoatsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_boat, only: [:show, :edit, :update, :destroy]
+
   def index
-    @boats = Boat.all
+    @boats = policy_scope(Boat).order(created_at: :desc)
   end
 
   def new
     @boat = Boat.new
+    authorize @boat
   end
 
   def create
     @boat = Boat.new(boat_params)
     @boat.user = current_user
+    authorize @boat
     if @boat.save
       redirect_to @boat
     else
@@ -46,5 +50,6 @@ class BoatsController < ApplicationController
 
   def set_boat
     @boat = Boat.find(params[:id])
+    authorize @boat
   end
 end
