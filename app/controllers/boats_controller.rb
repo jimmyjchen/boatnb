@@ -3,7 +3,7 @@ class BoatsController < ApplicationController
   before_action :set_boat, only: [:show, :edit, :update, :destroy]
 
   def index
-    @boats = policy_scope(Boat).order(created_at: :desc)
+    @boats = policy_scope(Boat).order(created_at: :desc).limit(6)
   end
 
   def new
@@ -45,7 +45,7 @@ class BoatsController < ApplicationController
   private
 
   def boat_params
-    params.require(:boat).permit(:description, :price, :available, :title, :photo)
+    params.require(:boat).permit(:description, :price, :available, :title, :photo, :photo_cache)
   end
 
   def set_boat
