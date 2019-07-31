@@ -1,0 +1,47 @@
+.booking-title {
+  color: black;
+  text-align: center;
+}
+
+.booking-card-img {
+  height: 120px;
+  object-fit: fill;
+  border-top-left-radius: calc(2px - 1px);
+  border-radius: 6px;
+}
+
+.booking-card {
+  height: 120px;
+  object-fit: fill;
+  border-top-left-radius: calc(2px - 1px);
+  border-radius: 6px;
+  color: black;
+  text-align: center;
+}
+
+.boat-title-b {
+  line-height: 10px;
+  color: black;
+  padding-left: 6px;
+  padding-top: 14px;
+  width: 400px;
+}
+
+.boat-price-b {
+  line-height: 20px;
+  color: black;
+  // padding-left: 200px;
+  // padding-top: 10px;
+  margin: auto;
+  margin-left: 100px;
+  // width: 400px;
+}
+
+.boat-owner-b {
+  line-height: 20px;
+  color: black;
+  // padding-left: 40px;
+  // padding-top: 90px;
+  margin: auto;
+  width: 300px;
+}
