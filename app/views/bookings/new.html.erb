@@ -1,5 +1,5 @@
 <%= simple_form_for [@boat, @booking] do |f| %>
-<%= f.input :date_start %>
-<%= f.input :date_end %>
+<%= f.input :date_start, discard_hour: true %>
+<%= f.input :date_end, discard_hour: true %>
 <%= f.submit %>
 <% end -%>

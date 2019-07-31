@@ -2,8 +2,11 @@
 
 <% @bookings.each do |b| %>
 <div><%= b.boat.title %>
-<%= b.date_start %>
-<%= b.date_end %>
+<%= b.date_start.strftime("%A %B %e %Y") %>
+<%= b.date_end.strftime("%A %B %e %Y") %>
+<%= day = (Date.parse(b.date_end.to_s) - Date.parse(b.date_start.to_s)).round %>
+<%= b.boat.price*day %>
 <%= b.boat.user.first_name %><%= b.boat.user.last_name %>
+<%= cl_image_tag b.boat.photo, height: 240, crop: :fill %>
 <% end %>
 </div>
