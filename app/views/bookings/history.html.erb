@@ -7,16 +7,16 @@
       <img class="booking-card-img" src="https://images.unsplash.com/photo-1511804472014-fa7b871cd6a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="Card image cap">
       <div class="d-flex">
         <div class="boat-title-b">
-          <p><%= b.boat.title %></p>
+          <p style="font-size: 18px"><%= b.boat.title %></p>
           <p>Starting date: <%= b.date_start.strftime("%A %B %e %Y") %></p>
           <p>Returning date: <%=b.date_end.strftime("%A %B %e %Y") %></p>
-           Renting days:<%= day = (Date.parse(b.date_end.to_s) - Date.parse(b.date_start.to_s)).round %></p>
+           Renting days: <%= day = (Date.parse(b.date_end.to_s) - Date.parse(b.date_start.to_s)).round %></p>
         </div>
-        <div class="boat-price-b">
+        <div class="boat-owner-b" style="text-align: center">
+          <p> Boat owner: <%= b.boat.user.first_name %><%= b.boat.user.last_name %></p>
+        </div>
+        <div class="boat-price-b" style="text-align: center">
           <p> Full Price: <%= b.boat.price*day %> </p>
-        </div>
-        <div class="boat-price-b">
-          <%= b.boat.user.first_name %><%= b.boat.user.last_name %>
         </div>
       </div>
     </div>
