@@ -1,1 +1,9 @@
 <h1>This is a booking, finally</h1>
+
+<% @bookings.each do |b| %>
+<div><%= b.boat.title %>
+<%= b.date_start %>
+<%= b.date_end %>
+<%= b.boat.user.first_name %><%= b.boat.user.last_name %>
+<% end %>
+</div>

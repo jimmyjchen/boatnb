@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    authorize @booking
     @boat = Boat.find(params[:boat_id])
   end
 
@@ -12,6 +13,7 @@ class BookingsController < ApplicationController
     @boat = Boat.find(params[:boat_id])
     @booking.user = current_user
     @booking.boat = @boat
+    authorize @booking
     if @booking.save
       redirect_to '/bookings'
     else
@@ -21,6 +23,7 @@ class BookingsController < ApplicationController
 
   def history
     @bookings = Booking.where(user: current_user)
+    authorize @bookings
   end
 
   private
