@@ -16,7 +16,7 @@
     <div class="d-flex col-sm-6 col-xs-12 col-md-4 my-1">
 <!-- style="width: 90%; height: 80%" -->
     <div class="card shadow-sm p-2 mb-1 bg-white rounded">
-      <img class="card-img-top" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+      <%= cl_image_tag b.photo, height: 240, width: 360, alt: b.title %>
       <h5 class="card-title text-dark pt-2 pb-0"><%= b.title %></h5>
       <p class="text-xs text-muted mt-0 pt-0">Shanghai, China</p>
       <p class="card-text mt-0 pt-0">Price: <%= number_to_currency(b.price, :unit => "$") %></p>
