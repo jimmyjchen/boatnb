@@ -1,0 +1,28 @@
+// All css used in new boat page - create a new boat
+.bgimage {
+  width:100%;
+  height:350px;
+  background: url('https://images.unsplash.com/photo-1452501957681-825202ea72e6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size:cover;
+  background-attachment: fixed;
+}
+.bgimage h1 {
+  color:white;
+  text-shadow:2px 2px #333;
+  text-align: center;
+  margin-top: 90px;
+}
+.bgimage h4 {
+  color:white;
+  text-shadow:2px 2px #333;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.card {
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
+}
