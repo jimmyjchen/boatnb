@@ -1,4 +1,13 @@
+
 //-- Landing page boat-cards (LIST ALL) ----------------------------------------
+
+.card-img-top {
+  height: 220px;
+  object-fit: fill;
+}
+
+// Landing page boat-cards (LIST ALL)
+
 .boat-cards {
   position: absolute;
   width: 185px;
@@ -103,7 +112,4 @@
 .body {
   text-align: center;
 }
-
-
-
 
