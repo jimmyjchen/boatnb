@@ -1,0 +1,29 @@
+// .banner {
+//   height: 100%;
+//   // width: 100% !important;
+//   background-size: cover;
+//   background-position: center;
+//     h1 {
+//     margin: 0;
+//     color: white;
+//     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+//     font-size: 32px;
+//     font-weight: bold;
+//   }
+// }
+
+.banner {
+  height: 100vh - 9;
+  background-size: cover;
+  background-position: center;
+    h1 {
+    font-style: italic;
+    width: 60%;
+    font-size: 52px;
+    text-align: right;
+    text-border: 1px solid black;
+    padding: 170px 80px;
+    color: white;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.4);
+  }
+}

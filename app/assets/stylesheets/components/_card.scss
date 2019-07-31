@@ -1,4 +1,13 @@
+
+//-- Landing page boat-cards (LIST ALL) ----------------------------------------
+
+.card-img-top {
+  height: 220px;
+  object-fit: fill;
+}
+
 // Landing page boat-cards (LIST ALL)
+
 .boat-cards {
   position: absolute;
   width: 185px;
@@ -7,8 +16,7 @@
   top: 212px;
 }
 
-
-// show page main boat card - banner  (LIST ONE SPECIFIC)
+//-- show page main boat card - banner  (LIST ONE SPECIFIC) --------------------
 .boat-card-banner {
   background-size: cover;
   background-position: center;
@@ -78,3 +86,30 @@
 .card-trip-pricing {
   padding-right: 8px;
 }
+
+// ---------- Create boat cards (new boat page) --------------------------------
+
+.boat-banner-create {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.boat-banner-create > img {
+  height: 300px;
+  width: 100%;
+  object-fit: cover
+}
+
+.boat-banner-create .boat-banner-create-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+
+// -----------------------------------------------------------------------------
+
+.body {
+  text-align: center;
+}
+
