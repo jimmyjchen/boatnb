@@ -9,29 +9,29 @@
   </div>
 </div>
 
-<div class="bg-light">
+<div class="bg-white">
   <h2 class="display-5 text-center text-dark pt-4 pb-1">Boats Available Today</h2>
   <div class="row mx-5">
     <% @boats.each do |b| %>
-    <div class="d-flex col-sm-6 col-xs-12 col-md-4 my-1">
-<!-- style="width: 90%; height: 80%" -->
-    <div class="card shadow-sm p-2 mb-1 bg-white rounded">
-      <img class="card-img-top" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
-      <h5 class="card-title text-dark pt-2 pb-0"><%= b.title %></h5>
-      <p class="text-xs text-muted mt-0 pt-0">Shanghai, China</p>
-      <p class="card-text mt-0 pt-0">Price: <%= number_to_currency(b.price, :unit => "$") %></p>
-      <%= link_to 'Details', boat_path(b), class: "btn btn-light" %>
-      <% b.available %>
-      <% b.user_id %>
-    </div>
-  </div>
+      <div class="d-flex col-sm-6 col-xs-12 col-md-4 my-1">
+    <!-- style="width: 90%; height: 80%" -->
+        <div class="card shadow-sm p-2 mb-1 bg-white rounded">
+          <img class="card-img-top" src="<%= b.photo.url %>">
+          <h5 class="card-title text-dark pt-2 pb-0"><%= b.title %></h5>
+          <p class="text-xs text-muted mt-0 pt-0">Shanghai, China</p>
+          <p class="card-text mt-0 pt-0">Price: <%= number_to_currency(b.price, :unit => "$") %></p>
+          <%= link_to 'Details', boat_path(b), class: "btn btn-light" %>
+          <% b.available %>
+          <% b.user_id %>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>
 
-<div class="footer border-top">
+<div class="footer border border-top-dark">
   <div class="footer-copyright">
-    Copyright BoatBnB 2019
+    Copyright BoatnB 2019
   </div>
   <div class="footer-links">
     <a href="#"><i class="fab fa-facebook pr-2 pl-2"></i></a>
