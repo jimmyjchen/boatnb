@@ -1,0 +1,26 @@
+.btn-gradient {
+  color: white;
+  padding: 12px 50px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: linear-gradient(#203764, #203764);
+  transition: background 0.3s ease;
+  border: 1px solid #0F60C4;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(#147EFF, #0F67DA);
+  color: white;
+}
+
+.btn-create-account {
+  color: white;
+  padding: 12px 100px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: linear-gradient(#203764, #203764);
+  transition: background 0.3s ease;
+  border: 1px solid #0F60C4;
+  text-align: center;
+}
+
