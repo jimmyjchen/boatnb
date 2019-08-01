@@ -21,7 +21,9 @@
       </div>
     </div>
     <%= link_to "Rate your experience", new_booking_review_path(b) %>
+    <% if b.review %>
     <%= b.review.rating %> <%= b.review.content %>
+    <% end %>
   <% end %>
 </div>
 
