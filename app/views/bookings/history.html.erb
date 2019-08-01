@@ -1,6 +1,7 @@
 <h2 class="booking-title" style="margin-top: 24px;">Reservation Center</h2>
 <p class="booking-title">Upcoming reservations</p>
 
+
 <div class="container justify-content-center">
   <% @bookings.each do |b| %>
     <div class="d-flex justify-content-left py-3">
@@ -27,4 +28,11 @@
   <% end %>
 </div>
 
+<%= if false %>
+<% if b.date_end < Date.today %>
+<h3>History Bookings</h3>
+<%= b.date_start %>
+<%= b.date_end %>
+<% end %>
+<%= end %>
 
