@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
   def index
+    @boats = policy_scope(Boat).where(user: current_user).order(created_at: :desc)
   end
 
   def new
@@ -15,7 +16,7 @@ class BookingsController < ApplicationController
     @booking.boat = @boat
     authorize @booking
     if @booking.save
-      redirect_to '/bookings'
+      redirect_to '/bookings/history'
     else
       render 'new'
     end

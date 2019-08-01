@@ -1,6 +1,7 @@
 class Booking < ApplicationRecord
   belongs_to :boat
   belongs_to :user
+  has_one :review, dependent: :destroy
   validates :date_start, :date_end, presence: true
   validate :end_must_be_after_start
   validate :start_must_not_be_before_today

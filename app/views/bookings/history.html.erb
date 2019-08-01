@@ -36,9 +36,18 @@
           </div>
         </div>
       </div>
+
     <% end %>
     <h5 class="booking-subtitle"> Past Reservations</h5>
   </div>
+
+    </div>
+    <%= link_to "Rate your experience", new_booking_review_path(b) %>
+    <% if b.review %>
+    <%= b.review.rating %> <%= b.review.content %>
+    <% end %>
+  <% end %>
+
 </div>
 
 
