@@ -1,0 +1,69 @@
+input {
+   outline: none;
+}
+
+.select {
+  position: relative;
+  overflow: hidden;
+  font-family: "Open Sans", sans-serif;
+  line-height: 28px;
+  border: 1px solid #8FB3C5;
+  width: 160px;
+  position: absolute;
+  top:  100px;
+  left: 100px;
+}
+
+.select.open:after {
+  -webkit-transform: rotate(180deg);
+}
+
+.select:after {
+  width:  10px;
+  height: 10px;
+  content: "";
+  display: block;
+  position: absolute;
+  top:  10px;
+  right: 5px;
+  background-image: url("http://bitcoin.arcana.lv/img/icons/sel-arrows.png");
+  -webkit-transition: -webkit-transform .3s;
+}
+
+.select.open {
+  overflow: visible;
+}
+
+.select .value-input {
+  border: none;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  background-color: #45829F;
+  color: #FFF;
+  padding: 0px 5px;
+}
+
+.select .currency-input {
+
+}
+
+.select.open .currency-list {
+  border-color: #8FB3C5;
+}
+
+.select .currency-list {
+  font-size: 16px;
+  list-style: none;
+  position: absolute;
+  right:  -1px;
+  bottom: -1px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  background-color: #45829F;
+  color: #FFF;
+}
+
+.select .currency-list .currency {
+  display: block;
+  padding: 0px 20px 0px 5px;
+}
