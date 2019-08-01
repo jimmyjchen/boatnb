@@ -30,7 +30,17 @@ class BoatsController < ApplicationController
     end
   end
 
+  def tagged
+    if params[:tag].present?
+      @boats = Boat.tagged_with(params[:tag])
+    else
+      @boats = Boat.all
+    end
+    authorize @boats
+  end
+
   def show
+    @related_boats = @boat.find_related_tags
   end
 
   def edit
@@ -53,7 +63,7 @@ class BoatsController < ApplicationController
   private
 
   def boat_params
-    params.require(:boat).permit(:description, :price, :available, :title, :photo, :photo_cache, :address)
+    params.require(:boat).permit(:description, :price, :available, :title, :photo, :photo_1, :photo_2, :photo_3, :photo_cache, :address, tag_list: [])
   end
 
   def set_boat

@@ -21,6 +21,10 @@ class BoatPolicy < ApplicationPolicy
     user_is_owner?
   end
 
+  def tagged?
+    true
+  end
+
   private
 
   def user_is_owner?

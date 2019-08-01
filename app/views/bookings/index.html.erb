@@ -7,7 +7,9 @@
     <p><%= booking.date_start %></p>
     <p><%= booking.date_end %></p>
     <p><%= booking.user_id %></p>
+    <% if booking.review %>
     <p> <%= booking.review.rating %> </p>
     <p> <%= booking.review.content %> </p>
+    <% end %>
   <% end %>
 <% end %>
