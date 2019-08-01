@@ -1,10 +1,10 @@
 <div class="booking-page">
   <div class="card-category">
     <h1 class="booking-title" style="margin-top: 24px;">Reservation Center</h1>
-    <!-- <p class="booking-title">Upcoming reservations</p> -->
   </div>
 
   <div class="container justify-content-center">
+    <h5 class="booking-subtitle">Upcoming reservations</h5>
     <% @bookings.each do |b| %>
       <div class="d-flex justify-content-left py-3">
         <img class="booking-card-img" src="<%= b.boat.photo %>" alt="Card image cap">
