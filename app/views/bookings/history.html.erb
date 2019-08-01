@@ -4,7 +4,7 @@
   </div>
 
   <div class="container justify-content-center">
-    <h5 class="booking-subtitle">Upcoming reservations</h5>
+    <h4 class="booking-subtitle">Upcoming reservations</h4>
     <% @bookings.each do |b| %>
       <div class="d-flex justify-content-left py-3">
         <img class="booking-card-img" src="<%= b.boat.photo %>" alt="Card image cap">
@@ -16,7 +16,8 @@
              Renting days: <%= day = (Date.parse(b.date_end.to_s) - Date.parse(b.date_start.to_s)).round %></p>
           </div>
           <div class="boat-owner-b" style="text-align: center">
-            <p> Boat owner: <%= b.boat.user.first_name %><%= b.boat.user.last_name %></p>
+            <!-- <p>  b.boat.user.first_name b.boat.user.last_name </p> -->
+            <p>Boat Owner</p>
             <img src="<%= b.boat.user.avatar.url(:bright_face) %>" class="avatar-booking">
           </div>
 
