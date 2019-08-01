@@ -20,9 +20,9 @@
         </div>
       </div>
     </div>
+    <%= link_to "Rate your experience", new_booking_review_path(b) %>
+    <%= b.review.rating %> <%= b.review.content %>
   <% end %>
 </div>
-
-
 
 
