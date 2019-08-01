@@ -10,6 +10,9 @@
     <div class="book-boat">
       <h2 class="card-trip-pricing"><%= number_to_currency(@boat.price, :unit => "$")%></h2>
       <span> <%= link_to 'Book Now', new_boat_booking_path(@boat), class:"btn btn-gradient"%> </span>
+      <span> <%= link_to 'Edit', edit_boat_path(@boat), class:"btn btn-gradient"%> </span>
+      <span> <%= link_to 'Delete', boats_path(@boat), class:"btn btn-gradient"%> </span>
+
     </div>
   </div>
 </div>
