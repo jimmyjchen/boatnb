@@ -25,18 +25,17 @@
                         required: true,
                         input_html: { autocomplete: "new-password" } %>
             <%= f.label :avatar do %>
-            <%= f.file_field :avatar, value: "Choose a file" %>
-            <%= f.hidden_field :avatar_cache %>
+              <%= f.file_field :avatar, value: "Choose a file" %>
+              <%= f.hidden_field :avatar_cache %>
             <% end %>
+            <%= f.button :submit, "Create Account", class:"btn btn-create-account" %>
+            <!-- <div class="form-actions">
+              <div>
+              </div>
+            </div> -->
           </div>
 
-          <div class="form-actions">
-            <div>
-              <%= f.button :submit, "Create Account", class:"btn btn-create-account" %>
-            </div>
-          </div>
         <% end %>
-
         <p class="link-btn-create-account"><%= render "devise/shared/links" %></p>
       </div>
     </div>

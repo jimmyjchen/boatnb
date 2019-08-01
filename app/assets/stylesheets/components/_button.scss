@@ -15,13 +15,14 @@
 
 .btn-create-account {
   color: white;
-  padding: 12px 180px;
+  padding: 12px 20px;
   border-radius: 4px;
   font-weight: bold;
   background: linear-gradient(#203764, #203764);
   transition: background 0.3s ease;
   border: 1px solid #0F60C4;
   text-align: center;
+  width: 100%;
 }
 
 .link-btn-create-account {
@@ -29,11 +30,4 @@
   margin-top: 10px;
 }
 
-#upload_image {
-  width: 0.1px;
-  height: 0.1px;
-  opacity: 0;
-  overflow: hidden;
-  position: absolute;
-  z-index: -1;
-}
+
