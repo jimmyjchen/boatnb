@@ -15,12 +15,19 @@
 
 .btn-create-account {
   color: white;
-  padding: 12px 100px;
+  padding: 12px 20px;
   border-radius: 4px;
   font-weight: bold;
   background: linear-gradient(#203764, #203764);
   transition: background 0.3s ease;
   border: 1px solid #0F60C4;
   text-align: center;
+  width: 100%;
 }
+
+.link-btn-create-account {
+  text-align: left;
+  margin-top: 10px;
+}
+
 
