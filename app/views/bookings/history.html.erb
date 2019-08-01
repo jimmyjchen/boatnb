@@ -4,7 +4,7 @@
 <div class="container justify-content-center">
   <% @bookings.each do |b| %>
     <div class="d-flex justify-content-left py-3">
-      <img class="booking-card-img" src="<%= cl_image_tag b.boat.photo %>" alt="Card image cap">
+      <img class="booking-card-img" src="<%= b.boat.photo %>" alt="Card image cap">
       <div class="d-flex">
         <div class="boat-title-b">
           <p style="font-size: 18px"><%= b.boat.title %></p>
