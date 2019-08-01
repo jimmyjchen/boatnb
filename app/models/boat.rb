@@ -1,5 +1,8 @@
 class Boat < ApplicationRecord
   mount_uploader :photo, PhotoUploader
+  mount_uploader :photo_1, PhotoUploader
+  mount_uploader :photo_2, PhotoUploader
+  mount_uploader :photo_3, PhotoUploader
   belongs_to :user
   has_many :bookings
   validates :description, :price, :title, :photo, presence: true, allow_blank: false
