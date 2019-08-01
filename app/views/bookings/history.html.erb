@@ -10,7 +10,7 @@
         <img class="booking-card-img" src="<%= b.boat.photo %>" alt="Card image cap">
         <div class="d-flex">
           <div class="boat-title-b">
-            <p style="font-size: 18px"><%= b.boat.title %></p>
+            <p class="booking-boat-title"><%= b.boat.title %></p>
             <p>Starting date: <%= b.date_start.strftime("%A %B %e %Y") %></p>
             <p>Returning date: <%=b.date_end.strftime("%A %B %e %Y") %></p>
              Renting days: <%= day = (Date.parse(b.date_end.to_s) - Date.parse(b.date_start.to_s)).round %></p>
@@ -19,11 +19,12 @@
             <p> Boat owner: <%= b.boat.user.first_name %><%= b.boat.user.last_name %></p>
           </div>
           <div class="boat-price-b" style="text-align: center">
-            <p> Full Price: <%= b.boat.price*day %> </p>
+            <p> Full Price: <%= number_to_currency(b.boat.price*day, :unit => "$") %> </p>
           </div>
         </div>
       </div>
     <% end %>
+    <h5 class="booking-subtitle"> Past Reservations</h5>
   </div>
 </div>
 
