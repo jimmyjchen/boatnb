@@ -11,9 +11,18 @@
     <div class="d-flex flex-row">
       <h6 id="price" class="text-secondary pr-4 align-self-center"><%= number_to_currency(@boat.price, :unit => "$", precision: 0)%> / day</h6>
       <button type="button" id="book-b" class="btn btn-secondary"><%= link_to 'Book Now', new_boat_booking_path(@boat)%></button>
+      <h2 class="card-trip-pricing"><%= number_to_currency(@boat.price, :unit => "$")%></h2>
+      <span> <%= link_to 'Book Now', new_boat_booking_path(@boat), class:"btn btn-gradient"%> </span>
+      <% if policy(@boat).edit? %>
+      <span> <%= link_to 'Edit', edit_boat_path(@boat), class:"btn btn-gradient"%> </span>
+      <% end %>
+      <% if policy(@boat).destroy? %>
+      <span> <%= link_to 'Delete', boat_path(@boat), method: 'delete', data: { confirm: 'are you suuure?'}, class:"btn btn-gradient"%> </span>
+      <% end %>
     </div>
   </div>
 </div>
+
 
 <div class="d-flex bg-white pt-3">
   <div class="col-lg-6 col-md-6 col-s-12" style="height: 655px">

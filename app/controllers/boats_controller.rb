@@ -3,7 +3,15 @@ class BoatsController < ApplicationController
   before_action :set_boat, only: [:show, :edit, :update, :destroy]
 
   def index
-    @boats = policy_scope(Boat).order(created_at: :desc).limit(6)
+    @boats = policy_scope(Boat).order(created_at: :desc).limit(6).geocoded
+    @markers = @boats.map do |boat|
+      {
+        lat: boat.latitude,
+        lng: boat.longitude,
+        infoWindow: render_to_string(partial: "/boats/info_window", locals: { boat: boat })
+        # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
+      }
+    end
   end
 
   def new
@@ -45,7 +53,7 @@ class BoatsController < ApplicationController
   private
 
   def boat_params
-    params.require(:boat).permit(:description, :price, :available, :title, :photo, :photo_cache)
+    params.require(:boat).permit(:description, :price, :available, :title, :photo, :photo_cache, :address)
   end
 
   def set_boat
