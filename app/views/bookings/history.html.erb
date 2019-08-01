@@ -6,7 +6,7 @@
   <div class="container justify-content-center">
     <h4 class="booking-subtitle">Upcoming reservations</h4>
     <% @bookings.each do |b| %>
-      <div class="d-flex justify-content-left py-3">
+      <div class="d-flex justify-content-left py-4">
         <img class="booking-card-img" src="<%= b.boat.photo %>" alt="Card image cap">
         <div class="d-flex">
           <div class="boat-title-b">
@@ -31,7 +31,8 @@
                 <a class="dropdown-item" href="#">Another action</a>
                 <a class="dropdown-item" href="#">Something else here</a>
               </div> -->
-            <p> Full Price: <%= number_to_currency(b.boat.price*day, :unit => "$") %> </p>
+            <p style="font-weight: bold"> Full Price: </p>
+            <p><%= number_to_currency(b.boat.price*day, :unit => "$") %> </p>
           </div>
         </div>
       </div>
