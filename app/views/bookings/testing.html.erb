@@ -1,0 +1,14 @@
+
+<% @boats.each do |boat| %>
+  Name of boat: <%= boat.title %>
+  Owner of boat: <p><%= boat.user.first_name %> <%= boat.user.last_name %></p>
+  Boat ID: <p><%= boat.id %></p>
+  <% boat.bookings.each do |booking| %>
+    <p>Renter: <%= booking.user.first_name %> <%= booking.user.last_name %></p>
+    <p><%= booking.date_start %></p>
+    <p><%= booking.date_end %></p>
+    <p><%= booking.user_id %></p>
+    <p> <%= booking.review.rating %> </p>
+    <p> <%= booking.review.content %> </p>
+  <% end %>
+<% end %>
