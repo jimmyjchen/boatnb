@@ -1,6 +1,32 @@
+.booking-boat-title {
+  font-weight:bold;
+  font-size:medium;
+}
+
+.booking-page {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  text-align: left;
+  height: 100vh;
+}
+
 .booking-title {
   color: white;
   text-align: center;
+}
+
+.booking-subtitle {
+  color: black;
+  text-align: left;
+  padding: 6px;
+  margin-top: 60px;
+  margin-bottom: 40px;
 }
 
 .booking-card-img {
@@ -25,6 +51,7 @@
   padding-left: 6px;
   padding-top: 14px;
   width: 400px;
+  margin-left: 30px;
 }
 
 .boat-price-b {
