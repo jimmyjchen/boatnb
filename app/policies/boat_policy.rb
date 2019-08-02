@@ -28,6 +28,8 @@ class BoatPolicy < ApplicationPolicy
   private
 
   def user_is_owner_or_admin?
+    return false if user.nil?
+
     record.user == user || user.admin
   end
 end
