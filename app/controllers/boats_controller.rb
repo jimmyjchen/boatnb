@@ -40,6 +40,12 @@ class BoatsController < ApplicationController
   end
 
   def show
+    @marker = [
+      {lat: @boat.latitude,
+      lng: @boat.longitude,
+      infoWindow: render_to_string(partial: "/boats/info_window", locals: { boat: @boat })
+      # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
+      }]
     @related_boats = @boat.find_related_tags
   end
 

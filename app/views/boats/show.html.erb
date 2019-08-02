@@ -28,11 +28,11 @@
       <div class="card-body rounded">
         <h5 class="card-title">Additional Boat Details</h5>
         <h6 class="card-subtitle text-muted mb-1">Shanghai, China</h6>
-          <% @boat.tag_list.each do |tag| %>
-            <div class="d-flex flex-row">
-              <span class="border p-1 m-1" style="font-size: 12px"><%= link_to tag, tagged_path(tag: tag) %></span>
-            </div>
-          <% end %>
+        <div class="d-flex flex-row">
+        <% @boat.tag_list.each do |tag| %>
+          <span class="border p-1 m-1 font-italic" style="font-size: 12px"><%= link_to tag, tagged_path(tag: tag) %></span>
+        <% end %>
+        </div>
         <p class="card-text font-italic mt-1">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
       </div>
     </div>
@@ -70,10 +70,12 @@
   <div class="col-lg-6 col-md-6 col-s-12" style="height: 590px">
     <div class="card w-100" style="height: 175px">
       <div class="card-body rounded">
-        <h6 class="card-title">Other Boats Similar to This One</h6>
-        <% @related_boats.each do |r| %>
-          <a href="<%= boat_path(r) %>"><img class="img-thumbnail" src="<%= r.photo.url %>"/></a>
-        <% end %>
+        <h6 class="">Other Boats Similar to This One</h6>
+        <div class="d-flex flex-row">
+          <% @related_boats.each do |r| %>
+            <a href="<%= boat_path(r) %>"><img class="img-thumbnail mx-1" src="<%= r.photo.url %>" width="175" height="175"></a>
+          <% end %>
+        </div>
       </div>
     </div>
     <div class="flex-shrink-1">
