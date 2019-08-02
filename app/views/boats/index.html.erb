@@ -22,7 +22,7 @@
           <ul class="list-inline">
             <% b.tag_list.each do |tag|%>
              <%= link_to tagged_path(tag: tag) do %>
-                <button><%= tag %></button>
+                <button class="btn-tag"><%= tag %></button>
               <% end %>
             <% end %>
           </ul>
