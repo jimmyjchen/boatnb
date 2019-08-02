@@ -18,8 +18,10 @@
             <p><%= booking.date_start %></p>
             <p><%= booking.date_end %></p>
             <p>User ID:<%= booking.user_id %></p>
-            <p>review1<%= booking.review %></p>
-            <p>review2<%= booking.review %></p>
+            <% if booking.review %>
+              <p> <%= booking.review.rating %> </p>
+              <p> <%= booking.review.content %> </p>
+            <% end %>
           <% end %>
         </div>
       </div>
@@ -27,6 +29,4 @@
     <% end %>
   </div>
 </div>
-
-
 

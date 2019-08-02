@@ -30,3 +30,12 @@
     <h5 class="booking-subtitle"> Past Reservations</h5>
   </div>
 </div>
+
+<%= if false %>
+<% if b.date_end < Date.today %>
+<h3>History Bookings</h3>
+<%= b.date_start %>
+<%= b.date_end %>
+<% end %>
+<%= end %>
+
