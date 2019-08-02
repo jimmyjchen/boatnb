@@ -1,16 +1,13 @@
 <div class="booking-page">
-
   <div class="card-category">
     <h1 class="booking-title" style="margin-top: 24px;">Reservation Center</h1>
   </div>
 
   <div class="container justify-content-center">
-
     <h4 class="booking-subtitle">Upcoming reservations</h4>
 
     <% @bookings.each do |b| %>
       <% if b.date_end >= Date.today %>
-
         <div class="d-flex justify-content-left py-4">
           <img class="booking-card-img" src="<%= b.boat.photo %>" alt="Card image cap">
           <div class="d-flex">
@@ -21,8 +18,7 @@
               <p>Renting days: <%= day = (Date.parse(b.date_end.to_s) - Date.parse(b.date_start.to_s)).round %></p>
             </div>
             <div class="boat-owner-b" style="text-align: center">
-                <!-- <p>  b.boat.user.first_name b.boat.user.last_name </p> -->
-              <p>Boat Owner</p>
+                <p>Owner: <%=b.boat.user.first_name%> <%=b.boat.user.last_name %></p>
               <img src="<%= b.boat.user.avatar.url(:bright_face) %>" class="avatar-booking">
             </div>
             <div class="boat-price-b" style="text-align: center">
@@ -50,8 +46,7 @@
             <p>Renting days: <%= day = (Date.parse(b.date_end.to_s) - Date.parse(b.date_start.to_s)).round %></p>
           </div>
             <div class="boat-owner-b" style="text-align: center">
-              <!-- <p>  b.boat.user.first_name b.boat.user.last_name </p> -->
-              <p>Boat Owner</p>
+              <p>Owner: <%=b.boat.user.first_name%> <%=b.boat.user.last_name %></p>
               <img src="<%= b.boat.user.avatar.url(:bright_face) %>" class="avatar-booking">
             </div>
             <div class="boat-price-b" style="text-align: center">

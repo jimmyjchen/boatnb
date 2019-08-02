@@ -1,32 +1,36 @@
 <div class="booking-page">
   <div class="card-category">
-    <h1 class="booking-title" style="margin-top: 24px;">My Boats</h1>
+    <h1 class="booking-title" style="margin-top: 24px;">My Boats Center</h1>
   </div>
+
   <div class="container justify-content-center">
+
     <h4 class="booking-subtitle">My Boats</h4>
 
     <% @boats.each do |boat| %>
     <div class="d-flex justify-content-left py-4">
+      <img class="booking-card-img" src="<%= boat.photo %>" alt="Card image cap">
       <div class="d-flex">
         <div class="boat-title-b">
-          <img class="booking-card-img" src="<%= boat.photo %>" alt="Card image cap">
           <p class="booking-boat-title" style="font-weight: bold"><%= link_to boat.title, boat_path(boat) %></p>
-
-          <p>Boat ID:<%= boat.id %></p>
-
-          <% boat.bookings.each do |booking| %>
-            <p>Renter: <%= booking.user.first_name %> <%= booking.user.last_name %></p>
-            <p><%= booking.date_start.strftime("%A %B %e %Y") %></p>
-            <p><%= booking.date_end.strftime("%A %B %e %Y") %></p>
-            <% if booking.review %>
-              <p> <%= booking.review.rating %> </p>
-              <p> <%= booking.review.content %> </p>
-            <% end %>
+        </div>
+          <% d = 0 %>
+          <% u = 0 %>
+          <% m = 0 %>
+        <div class="boat-owner-b" style="text-align: center">
+          <% boat.bookings.each do |b| %>
+          <% if b.date_end < Date.today %>
+          <% u += 1 %>
+          <% d += ((Date.parse(b.date_end.to_s) - Date.parse(b.date_start.to_s)).round) %>
+          <% m += ((Date.parse(b.date_end.to_s) - Date.parse(b.date_start.to_s)).round)*(b.boat.price) %>
           <% end %>
+        <% end %>
+          <p> Rented to: <span style="font-size: 24px; color: darkgray;"><%= u %></span> users </p>
+          <p> Rented for: <span style="font-size: 24px; color: darkgray;"><%= d %></span> days </p>
+          <p> Earned: <span style="font-size: 24px; color: green;">  $ <%= m %></span>  </p>
         </div>
       </div>
     </div>
     <% end %>
   </div>
 </div>
-
