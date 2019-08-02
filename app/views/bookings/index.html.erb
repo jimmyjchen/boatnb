@@ -1,6 +1,6 @@
 <div class="booking-page">
   <div class="card-category">
-    <h1 class="booking-title" style="margin-top: 24px;">My Profile</h1>
+    <h1 class="booking-title" style="margin-top: 24px;">My Boats</h1>
   </div>
   <div class="container justify-content-center">
     <h4 class="booking-subtitle">My Boats</h4>
@@ -9,15 +9,15 @@
     <div class="d-flex justify-content-left py-4">
       <div class="d-flex">
         <div class="boat-title-b">
-          <p class="booking-boat-title" style="font-weight: bold"><%= boat.title %></p>
+          <img class="booking-card-img" src="<%= boat.photo %>" alt="Card image cap">
+          <p class="booking-boat-title" style="font-weight: bold"><%= link_to boat.title, boat_path(boat) %></p>
 
           <p>Boat ID:<%= boat.id %></p>
 
           <% boat.bookings.each do |booking| %>
             <p>Renter: <%= booking.user.first_name %> <%= booking.user.last_name %></p>
-            <p><%= booking.date_start %></p>
-            <p><%= booking.date_end %></p>
-            <p>User ID:<%= booking.user_id %></p>
+            <p><%= booking.date_start.strftime("%A %B %e %Y") %></p>
+            <p><%= booking.date_end.strftime("%A %B %e %Y") %></p>
             <% if booking.review %>
               <p> <%= booking.review.rating %> </p>
               <p> <%= booking.review.content %> </p>
