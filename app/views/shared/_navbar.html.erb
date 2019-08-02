@@ -6,7 +6,10 @@
     <% if user_signed_in? %>
       <li class="nav-item">
           <%= link_to "Rent Out Your Boat", new_boat_path, class: "nav-link" %>
-        </li>
+      </li>
+      <li class="nav-item align-middle">
+         <p> Welcome, <%= current_user.first_name %> </p>
+      </li>
       <li class="nav-item dropdown">
         <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="<%= current_user.avatar.url(:bright_face) %>"/>
         <div class="dropdown-menu dropdown-menu-right text-right text-muted pr-3 pb-3" aria-labelledby="navbarDropdown" style="width: 6rem;">
