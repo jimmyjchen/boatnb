@@ -26,7 +26,7 @@
               <% end %>
             <% end %>
           </ul>
-          <p class="card-text mt-0 pt-0">Price: <%= number_to_currency(b.price, :unit => "$") %></p>
+          <p class="card-text mt-0 pt-0">Price per Day: <%= number_to_currency(b.price, :unit => "$", precision: 0) %></p>
           <%= link_to 'Details', boat_path(b), class: "btn btn-light" %>
           <% b.available %>
           <% b.user_id %>
