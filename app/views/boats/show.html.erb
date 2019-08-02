@@ -4,17 +4,18 @@
   <div class="d-flex bg-white justify-content-between" style="position:absolute; bottom:0px; height:100px; left:0px; right:0px">
     <div class="d-flex align-self-center pl-3">
       <div>
-        <h4 class="text-secondary"><%= @boat.title %></h4>
-        <h6 class="font-italic"><%= @boat.description %></h6>
+        <h4 class="text-secondary font-weight-bold"><%= @boat.title %></h4>
+        <h6 class="text-secondary text-muted"><%= @boat.description %></h6>
       </div>
     </div>
     <div class="d-flex flex-row align-items-center">
       <h6 id="price" class="text-secondary mr-4 align-middle"><%= number_to_currency(@boat.price, :unit => "$", precision: 0)%> / day</h6>
       <div class="d-flex flex-row mr-4 align-items-center">
-        <%= link_to 'Book Now', new_boat_booking_path(@boat), class:"btn btn-secondary rounded"%>
         <% if policy(@boat).update? %>
           <%= link_to 'Edit', edit_boat_path(@boat), class:"btn btn-link btn-sm rounded align-top"%>
           <%= link_to 'Delete', boat_path(@boat), method: 'delete', data: { confirm: 'Are you sure you want to delete this boat?'}, class:"btn btn-link btn-sm rounded align-top"%>
+        <% else %>
+          <%= link_to 'Book Now', new_boat_booking_path(@boat), class:"btn btn-secondary rounded"%>
         <% end %>
       </div>
     </div>
@@ -23,14 +24,16 @@
 
 <div class="d-flex bg-white mt-4">
   <div class="col-lg-6 col-md-6 col-s-12" style="height: 590px">
-    <div class="card w-100">
+    <div class="card w-100" style="height: 175px">
       <div class="card-body rounded">
         <h5 class="card-title">Additional Boat Details</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Shanghai, China</h6>
+        <h6 class="card-subtitle text-muted mb-1">Shanghai, China</h6>
           <% @boat.tag_list.each do |tag| %>
-          <%= link_to tag, tagged_path(tag: tag) %>
+            <div class="d-flex flex-row">
+              <span class="border p-1 m-1" style="font-size: 12px"><%= link_to tag, tagged_path(tag: tag) %></span>
+            </div>
           <% end %>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <p class="card-text font-italic mt-1">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
       </div>
     </div>
     <div id="carouselExampleIndicators" class="carousel slide flex-shrink-1" data-ride="carousel">
@@ -63,23 +66,28 @@
       </a>
     </div>
   </div>
-  <div class="col-6">
-    <div
-      id="map"
-      style="width: 100%;
-      height: 535px;"
-      data-markers="<%= @marker.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div>
-  </div>
-</div>
 
-  <h3>Other boats you might be interested in 🤓</h3>
-  <ul>
-   <% @related_boats.each do |r| %>
-      <li><%= link_to r.title, boat_path(r) %></li>
-    <% end %>
-  </ul>
+  <div class="col-lg-6 col-md-6 col-s-12" style="height: 590px">
+    <div class="card w-100" style="height: 175px">
+      <div class="card-body rounded">
+        <h6 class="card-title">Other Boats Similar to This One</h6>
+        <% @related_boats.each do |r| %>
+          <a href="<%= boat_path(r) %>"><img class="img-thumbnail" src="<%= r.photo.url %>"/></a>
+        <% end %>
+      </div>
+    </div>
+    <div class="flex-shrink-1">
+      <div
+          id="map";
+          style="width: 100%;
+          height: 400px;"
+          data-markers="<%= @marker.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+          </div>
+      </div>
+    </div>
+  </div>
+
 
 <footer class="footer border border-top-dark">
   <div class="footer-copyright">
