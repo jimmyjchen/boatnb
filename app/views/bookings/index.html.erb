@@ -12,7 +12,7 @@
       <img class="booking-card-img" src="<%= boat.photo %>" alt="Card image cap">
       <div class="d-flex">
         <div class="boat-title-b">
-          <p class="booking-boat-title" style="font-weight: bold"><%= link_to boat.title, boat_path(boat) %></p>
+          <p class="booking-boat-title" style="font-weight: bold"><%= link_to boat.title, boat_path(boat), class: "title-boat" %> </p>
         </div>
           <% d = 0 %>
           <% u = 0 %>
