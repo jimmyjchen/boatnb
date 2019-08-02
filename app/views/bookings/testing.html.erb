@@ -15,3 +15,47 @@
 
 
 <img src="cl_image_tag(@boat.photo, width: 300, height: 300, crop: :thumb, crop: :fill) %>">
+
+<div class="layout-newboat-form-page">
+  <div class="intro">
+    <h3 class="text-center pb-4">Request Boat Booking</h3>
+  </div>
+
+
+    <%= simple_form_for :search, method: "get" do |f| %>
+    <p><%= f.input :start_date, as: :string, label: 'Requested Start Date', required: true, input_html: {class: "datepicker"} %></p>
+    <p><%= f.input :end_date, as: :string, label: 'Requested End Date', required: true, input_html: {class: "datepicker"} %></p>
+    <div class="text-center pt-2">
+     <p><%= f.button :submit, "Request Booking", class: "btn btn-secondary btn-md"%></p>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="layout-book-boat">
+  <div class="intro">
+    <h1>Request Boat Booking</h1>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 offset-sm-3">
+      <div class="boat-form">
+        <%= simple_form_for :search, method: "get" do |f| %>
+        <%= f.input :start_date, as: :string, label: 'Requested Start Date', required: true, input_html: {class: "datepicker"} %>
+        <%= f.input :end_date, as: :string, label: 'Requested End Date', required: true, input_html: {class: "datepicker"} %>
+        <%= f.button :submit, "Request Booking", class: "btn btn-secondary btn-md"%>
+        <div class="text-center">
+          <button type="submit" class="btn btn-secondary btn-md">Request Booking</button>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
