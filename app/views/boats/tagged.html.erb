@@ -1,8 +1,12 @@
-<p>Great!!!!!!!!</p>
-<p> All the <%= params[:tag] %> Boats as follows: </p>
-
-
-<% @boats.each do |boat| %>
-<%= link_to boat.title, boat_path(boat) %>
-<%= cl_image_tag(boat.photo, width: 150, height: 150, crop: :thumb, gravity: :face) %>
-<% end %>
+<div class="booking-page">
+  <div class="card-category">
+    <p class="booking-title" style="margin-top: 24px;"> All the <%= params[:tag] %> Boats as follows: </p>
+  </div>
+  <div class="container justify-content-center">
+    <h4 class="booking-subtitle">Upcoming reservations</h4>
+    <% @boats.each do |boat| %>
+    <%= link_to boat.title, boat_path(boat) %>
+    <%= cl_image_tag(boat.photo, width: 150, height: 150, crop: :thumb, gravity: :face) %>
+    <% end %>
+  </div>
+</div>
