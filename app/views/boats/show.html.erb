@@ -1,5 +1,6 @@
-<div class="img-container bg-white">
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1414437384035-787b9df782d7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1108&q=80)">
+<div class="img-container">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(<%= @boat.photo.url%>)">
+
   </div>
   <div class="d-flex bg-white justify-content-between" style="position:absolute; bottom:0px; height:100px; left:0px; right:0px">
     <div class="d-flex align-self-center pl-3">
@@ -31,6 +32,11 @@
       <div class="card-body rounded">
         <h5 class="card-title">Additional Boat Details</h5>
         <h6 class="card-subtitle mb-2 text-muted">Shanghai, China</h6>
+
+        <% @boat.tag_list.each do |tag| %>
+        <%= link_to tag, tagged_path(tag: tag) %>
+        <% end %>
+
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
       </div>
     </div>
@@ -72,6 +78,13 @@
       </div>
   </div>
 </div>
+
+  <h3>Other boats you might be interested in 🤓</h3>
+  <ul>
+   <% @related_boats.each do |r| %>
+      <li><%= link_to r.title, boat_path(r) %></li>
+    <% end %>
+  </ul>
 
 <footer class="footer border border-top-dark">
   <div class="footer-copyright">

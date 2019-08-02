@@ -1,0 +1,5 @@
+<%= simple_for_for @boat do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :tag_list, as: :check_boxes, collection: ["Yatch", "Sailing", "Canoe", "Cruise", "Fishing Boat", "Speedy", "Family", "Romantic", "Engine-Power", "Men-Power"] %>
+<%= f.submit %>
