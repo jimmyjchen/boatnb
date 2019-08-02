@@ -13,6 +13,17 @@
       <div class="d-flex">
         <div class="boat-title-b">
           <p class="booking-boat-title" style="font-weight: bold"><%= link_to boat.title, boat_path(boat) %></p>
+          <% boat.bookings.each do |b| %>
+            <div>
+              <% if b.review.nil? == false %>
+                <% i = 0 %>
+                <% while i < b.review.rating %>
+                  <i class="fas fa-star" style="color: #2a7a66"></i>
+                  <% i += 1 %>
+                <% end %>
+              <% end %>
+            </div>
+          <% end %>
         </div>
           <% d = 0 %>
           <% u = 0 %>
