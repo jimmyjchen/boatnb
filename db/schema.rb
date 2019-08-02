@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 2019_08_01_165837) do
     t.float "latitude"
     t.float "longitude"
     t.string "address"
-    t.json "more_photos"
     t.string "photo_1"
     t.string "photo_2"
     t.string "photo_3"

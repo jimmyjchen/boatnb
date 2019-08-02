@@ -22,8 +22,20 @@
     font-size: 52px;
     text-align: right;
     text-border: 1px solid black;
-    padding: 170px 80px;
+    padding: 120px 36px;
     color: white;
     text-shadow: 2px 2px 3px rgba(0,0,0,0.4);
+  }
+}
+
+@media(max-width: 768px) {
+  .banner h1 {
+    font-size: 36px;
+  }
+}
+
+@media(max-width: 384px) {
+  .banner h1 {
+    font-size: 24px;
   }
 }
