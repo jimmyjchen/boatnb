@@ -3,13 +3,14 @@
   </div>
   <div class="container justify-content-center">
     <h4 class="booking-subtitle">You are searching for: <%= params[:tag] %> tag</h4>
+    <h5 style="color:black">Available boats:</h5>
 
     <% @boats.each do |boat| %>
     <div class="d-flex justify-content-left py-4">
       <%= cl_image_tag(boat.photo, class: 'tag-boat-picture') %>
       <div class="boat-tag-pic">
         <div class="boat-tag-title">
-          <p><%= link_to boat.title, boat_path(boat) %></p>
+          <%= link_to boat.title, boat_path(boat), class: "title-boat" %>
         </div>
       </div>
     </div>
