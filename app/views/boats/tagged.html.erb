@@ -1,12 +1,22 @@
 <div class="booking-page">
-  <div class="card-category">
-    <p class="booking-title" style="margin-top: 24px;"> All the <%= params[:tag] %> Boats as follows: </p>
+  <div class="tag-card-category">
   </div>
   <div class="container justify-content-center">
-    <h4 class="booking-subtitle">Upcoming reservations</h4>
+    <h4 class="booking-subtitle">You are searching for: <%= params[:tag] %> tag</h4>
     <% @boats.each do |boat| %>
-    <%= link_to boat.title, boat_path(boat) %>
-    <%= cl_image_tag(boat.photo, width: 150, height: 150, crop: :thumb, gravity: :face) %>
-    <% end %>
+    <div class="d-flex justify-content-left py-4">
+      <div>
+        <%= cl_image_tag(boat.photo, class: 'tag-boat-picture') %>
+      </div>
+      <div class="boat-tag-pic">
+        <div class="boat-tag-title">
+          <p><%= link_to boat.title, boat_path(boat) %></p>
+        </div>
+      </div>
+      <% end %>
+    </div>
   </div>
 </div>
+
+
+
