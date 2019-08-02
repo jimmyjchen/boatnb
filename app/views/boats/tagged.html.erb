@@ -1,0 +1,8 @@
+<p>Great!!!!!!!!</p>
+<p> All the <%= params[:tag] %> Boats as follows: </p>
+
+
+<% @boats.each do |boat| %>
+<%= link_to boat.title, boat_path(boat) %>
+<%= cl_image_tag(boat.photo, width: 150, height: 150, crop: :thumb, gravity: :face) %>
+<% end %>

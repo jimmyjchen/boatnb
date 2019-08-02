@@ -6,7 +6,8 @@
   <div class="container justify-content-center">
     <h4 class="booking-subtitle">Upcoming reservations</h4>
 
-      <% @bookings.each do |b| %>
+
+    <% @bookings.each do |b| %>
       <div class="d-flex justify-content-left py-4">
         <img class="booking-card-img" src="<%= b.boat.photo %>" alt="Card image cap">
         <div class="d-flex">
@@ -29,11 +30,18 @@
             <% if b.review %>
               <%= b.review.rating %> <%= b.review.content %>
             <% end %>
-
           </div>
         </div>
       </div>
     <% end %>
   </div>
 </div>
+
+<%= if false %>
+<% if b.date_end < Date.today %>
+<h3>History Bookings</h3>
+<%= b.date_start %>
+<%= b.date_end %>
+<% end %>
+<%= end %>
 
