@@ -21,8 +21,8 @@
           <span class="text-xs text-muted mt-0 pt-0"><%= b.address %></span>
           <ul class="list-inline">
             <% b.tag_list.each do |tag|%>
-              <%= link_to tagged_path(tag: tag) do %>
-                <%= tag %>
+             <%= link_to tagged_path(tag: tag) do %>
+                <button><%= tag %></button>
               <% end %>
             <% end %>
           </ul>
