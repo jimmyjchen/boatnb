@@ -1,31 +1,34 @@
-<h2 class="booking-title" style="margin-top: 24px;">Reservation Center</h2>
-<p class="booking-title">Upcoming reservations</p>
+<div class="booking-page">
+  <div class="card-category">
+    <h1 class="booking-title" style="margin-top: 24px;">Reservation Center</h1>
+  </div>
 
+  <div class="container justify-content-center">
+    <h4 class="booking-subtitle">Upcoming reservations</h4>
 
-<div class="container justify-content-center">
-  <% @bookings.each do |b| %>
-    <div class="d-flex justify-content-left py-3">
-      <img class="booking-card-img" src="<%= b.boat.photo %>" alt="Card image cap">
-      <div class="d-flex">
-        <div class="boat-title-b">
-          <p style="font-size: 18px"><%= b.boat.title %></p>
-          <p>Starting date: <%= b.date_start.strftime("%A %B %e %Y") %></p>
-          <p>Returning date: <%=b.date_end.strftime("%A %B %e %Y") %></p>
-           Renting days: <%= day = (Date.parse(b.date_end.to_s) - Date.parse(b.date_start.to_s)).round %></p>
-        </div>
-        <div class="boat-owner-b" style="text-align: center">
-          <p> Boat owner: <%= b.boat.user.first_name %><%= b.boat.user.last_name %></p>
-        </div>
-        <div class="boat-price-b" style="text-align: center">
-          <p> Full Price: <%= b.boat.price*day %> </p>
+    <% @bookings.each do |b| %>
+      <div class="d-flex justify-content-left py-4">
+        <img class="booking-card-img" src="<%= b.boat.photo %>" alt="Card image cap">
+        <div class="d-flex">
+          <div class="boat-title-b">
+            <p class="booking-boat-title" style="font-weight: bold"><%= b.boat.title %></p>
+            <p>Starting date: <%= b.date_start.strftime("%A %B %e %Y") %></p>
+            <p>Returning date: <%=b.date_end.strftime("%A %B %e %Y") %></p>
+            <p>Renting days: <%= day = (Date.parse(b.date_end.to_s) - Date.parse(b.date_start.to_s)).round %></p>
+          </div>
+          <div class="boat-owner-b" style="text-align: center">
+            <p>Boat Owner</p>
+            <img src="<%= b.boat.user.avatar.url(:bright_face) %>" class="avatar-booking">
+          </div>
+          <div class="boat-price-b" style="text-align: center">
+            <p style="font-weight: bold"> Full Price: </p>
+            <p><%= number_to_currency(b.boat.price*day, :unit => "$") %> </p>
+          </div>
         </div>
       </div>
-    </div>
-    <%= link_to "Rate your experience", new_booking_review_path(b) %>
-    <% if b.review %>
-    <%= b.review.rating %> <%= b.review.content %>
     <% end %>
-  <% end %>
+    <h5 class="booking-subtitle"> Past Reservations</h5>
+  </div>
 </div>
 
 <%= if false %>

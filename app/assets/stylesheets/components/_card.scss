@@ -32,46 +32,6 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-// .card-trip {
-//   overflow: hidden;
-//   background: white;
-// }
-
-// .card-trip > img {
-//   height: 540px;
-//   width: 100%;
-//   object-fit: cover
-// }
-
-// .card-trip h2 {
-//   font-size: 16px;
-//   font-weight: bold;
-//   margin: 0;
-// }
-
-// .card-trip p {
-//   font-size: 12px;
-//   opacity: .7;
-// // }
-
-
-// .card-trip .card-trip-infos {
-//   padding: 16px;
-//   display: flex;
-//   justify-content: space-between;
-// }
-
-// .card-trip-infos .card-trip-user {
-//   position: absolute;
-//   right: 16px;
-//   top: -20px;
-// //   width: 40px;
-// // }
-
-// .notice {
-//   margin: 0;
-// }
-
 .title-boat {
   flex-grow: 1;
 }
@@ -79,20 +39,6 @@
 #price {
   font-weight: bold;
 }
-
-#book-b {
-  background-color: $blue;
-  margin-top: 20px;
-  margin-right: 20px;
-  margin-bottom: 20px;
-  a {
-  color: white;
-  }
-}
-
-// .card-trip-pricing {
-//   padding-right: 8px;
-// }
 
 // ---------- Create boat cards (new boat page) --------------------------------
 
@@ -118,5 +64,21 @@
 
 .body {
   text-align: center;
+}
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), asset-url('banner7.jpg') no-repeat center;
 }
 
