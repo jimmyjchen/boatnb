@@ -13,7 +13,12 @@
 
 .nav-item .nav-link {
   color: gray;
+  padding: 0 8px 0 0;
   &:hover {
     text-decoration: underline;
   }
+}
+
+.nav li {
+  font-size: 12px;
 }
